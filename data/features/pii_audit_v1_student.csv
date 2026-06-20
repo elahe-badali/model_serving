@@ -1,0 +1,8 @@
+table,column,pii_type,decision,reason
+listing,listing_id,entity identifier,keep as entity key only,needed to define one row per listing; not a model input
+listing,host_id,person/account identifier,"use for joins only, then drop",identifies or links to a host account; must not be used as a model feature
+host,host_pseudo_id,pseudonymous person/account identifier,drop,pseudonymous identifier can still link records to the same host; not needed for modeling
+listing,license,license / regulatory identifier,drop,license can identify or link to a real-world listing or owner; not a model feature
+review,review_id,review identifier,"use for deduplication only, then drop",raw review identifier is not a meaningful model feature
+review,reviewer_id,person/account identifier,drop,identifies or links to a reviewer account; must not be used as a model feature
+review,reviewer_pseudo_id,pseudonymous person/account identifier,drop,pseudonymous reviewer identifier can still link reviews to the same person
